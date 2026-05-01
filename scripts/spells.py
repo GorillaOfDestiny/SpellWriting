@@ -115,8 +115,8 @@ class spell():
         decimal_array = np.zeros(self.n_att)
         override_keys = list(override_dict.keys())
         for i in range(self.n_att):
-            if self.atts in override_keys:
-                decimal_array[i] = override_keys[self.atts]
+            if self.atts[i] in override_keys:
+                decimal_array[i] = override_dict[self.atts[i]]
             else:
                 att_items = self.read_txt_file(self.txt_files[i])
                 idx = att_items.index(self.att_strs[i])
@@ -127,8 +127,8 @@ class spell():
         self.binary_array = np.zeros((self.n_att,self.n_pol),dtype = int)
         override_keys = list(override_dict.keys())
         for i in range(self.n_att):
-            if self.atts in override_keys:
-                self.binary_array[i] = override_keys[self.atts]
+            if self.atts[i] in override_keys:
+                self.binary_array[i] = override_dict[self.atts[i]]
             else:
                 att_items = self.read_txt_file(self.txt_files[i])
                 idx = att_items.index(self.att_strs[i])
