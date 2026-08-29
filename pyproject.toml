@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spell_writing"
+version = "0.1.0"
+
+[tool.setuptools.package-data]
+"spell_writing" = ["attribute_ordering/*.txt"]
